@@ -330,16 +330,16 @@ hr.div{border:none;border-top:1px solid var(--border-light);margin:4rem 0;}
       <div class="dep"><span class="dep-dot"></span> Live on HuggingFace</div>
     </div>
     <div class="fp-kpi-strip">
-      <div class="fk"><div class="fk-val green">1.75mm</div><div class="fk-lbl">HC Error (ISUOG ≤3mm)</div></div>
-      <div class="fk"><div class="fk-val">97.36%</div><div class="fk-lbl">Dice (Static)</div></div>
+      <div class="fk"><div class="fk-val green">1.65mm</div><div class="fk-lbl">HC Error (ISUOG ≤3mm)</div></div>
+      <div class="fk"><div class="fk-val">97.75%</div><div class="fk-lbl">Dice (Static)</div></div>
       <div class="fk"><div class="fk-val">2.10mm</div><div class="fk-lbl">HC Error (Cine-loop)</div></div>
-      <div class="fk"><div class="fk-val green">3.4×</div><div class="fk-lbl">Better than SOTA</div></div>
+      <div class="fk"><div class="fk-val green">3.6×</div><div class="fk-lbl">Better than SOTA</div></div>
       <div class="fk"><div class="fk-val green">153 hrs</div><div class="fk-lbl">Saved / unit / year</div></div>
     </div>
     <div class="fp-body">
       <div class="fp-clinical">
-        <p><strong>The clinical problem:</strong> HC measurement is mandatory at every routine antenatal scan. Manual calliper placement takes 2–4 minutes, introduces up to 7mm inter-observer variation, and accumulates to ~153 sonographer hours per year at a unit doing 20 scans per day. This system replaces that step with a reproducible measurement to 1.75mm — 40% inside the ISUOG ±3mm acceptability threshold.</p>
-        <p><strong>Course baseline → clinical system:</strong> The course project achieved 17.25mm MAE — over the ISUOG threshold by 5.75×. The post-course rebuild closed that gap to 1.75mm through three targeted changes: flood-fill correction of hollow-ellipse annotations (single biggest fix), boundary-weighted loss with distance-transform upweighting, and clinically-motivated augmentation (Rician speckle, not Gaussian). No architecture change — engineering, not a better model.</p>
+        <p><strong>The clinical problem:</strong> HC measurement is mandatory at every routine antenatal scan. Manual calliper placement takes 2–4 minutes, introduces up to 7mm inter-observer variation, and accumulates to ~153 sonographer hours per year at a unit doing 20 scans per day. This system replaces that step with a reproducible measurement to 1.65mm — 45% inside the ISUOG ±3mm acceptability threshold.</p>
+        <p><strong>Course baseline → clinical system:</strong> The course project achieved 17.25mm MAE — over the ISUOG threshold by 5.75×. The post-course rebuild closed that gap to 1.65mm through three targeted changes: flood-fill correction of hollow-ellipse annotations (single biggest fix), boundary-weighted loss with distance-transform upweighting, and clinically-motivated augmentation (Rician speckle, not Gaussian). No architecture change — engineering, not a better model.</p>
         <p><strong>The cine-loop system:</strong> Sonographers assess HC over a probe sweep, not a single frozen frame. The temporal model processes 16-frame sequences via shared 2D U-Net encoder + temporal self-attention (MAE 2.10mm, ISUOG compliant). Training data synthesized via Pseudo-LDDM v2 (Ornstein-Uhlenbeck probe motion, per-frame skull variation, Rician speckle) when real cine acquisitions were clinically held.</p>
         <p><strong>Documented limitation:</strong> Third-trimester MAE 7.60mm exceeds the ISUOG threshold. Cause: acoustic shadowing from the ossified skull. Explicitly documented in Model Card with recommendation for manual verification at &gt;30 weeks GA.</p>
       </div>
