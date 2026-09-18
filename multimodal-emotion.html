@@ -154,7 +154,7 @@ hr.divider{border:none;border-top:1px solid var(--border-light);margin:3.5rem 0;
 
 <div class="learned-box reveal">
   <h4>What this project built that transfers to clinical AI</h4>
-  <p><strong>Why simple fusion fails:</strong> Understanding exactly why — temporal misalignment, feature-space mismatch — and what would fix it (cross-modal attention, temporal video modeling) is more valuable than if it had worked. The same failure mode applies to any clinical pipeline fusing imaging data with time-series (vital signs, ECG) or structured metadata.</p>
+  <p><strong>Why simple fusion fails:</strong> Understanding exactly why — temporal misalignment, feature-space mismatch — and what would fix it (cross-modal attention, temporal video modelling) is more valuable than if it had worked. The same failure mode applies to any clinical pipeline fusing imaging data with time-series (vital signs, ECG) or structured metadata.</p>
   <p><strong>Multi-task learning with dual output heads:</strong> Every other classification project has a single target. This was the first project with two simultaneous targets sharing a backbone but separate heads — how multi-task objectives interact during training is directly relevant to clinical AI systems that must simultaneously predict multiple biomarkers or measurements.</p>
   <p><strong>Transfer learning far from ImageNet:</strong> VGG-16 pretrained on 1,000-class natural images, fine-tuned for facial emotion recognition — a task with very different discriminative features. The +8pp improvement despite the domain gap showed that hierarchical visual representations are partially transferable, which informs every transfer learning decision in medical imaging.</p>
 </div>
